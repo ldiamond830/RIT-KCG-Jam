@@ -42,6 +42,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject JPY20Drink;
 
+    private bool barrier;
+
+    public bool Barrier
+    {
+        get { return barrier; }
+
+    private float barrierTimer;
+    [SerializeField]
+    private float barrierTime;
+
     public void OnFire(InputAction.CallbackContext context)
     {
         if(projectile != null){
@@ -64,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         UI = GetComponent<PlayerUI>();
         position = this.transform.position;
+        barrier = false;
     }
 
     // Update is called once per frame
@@ -83,6 +94,16 @@ public class PlayerMovement : MonoBehaviour
 
             if(stunTimer <= 0){
                 stunned = false;
+            }
+        }
+
+        if (barrier)
+        {
+            barrierTimer -= Time.deltaTime;
+
+            if (barrierTimer <= 0)
+            {
+                barrier = false;
             }
         }
     }
@@ -167,6 +188,8 @@ public class PlayerMovement : MonoBehaviour
             projectile = JPY15Drink;
 
             //set up invincibility
+            barrier = true;
+            barrierTimer = barrierTime;
         }
     }
 

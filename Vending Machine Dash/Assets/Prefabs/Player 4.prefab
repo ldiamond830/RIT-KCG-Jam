@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 8b1b24dcea4a15f4383e924cceb45dc0,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -167,7 +167,131 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9444e163-f57c-42f4-9e1d-4d8553bcbe0c
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ee5be192-ef83-40b4-9174-3acee4f77af8
+    m_ActionName: Player/Fire[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PurchasePETBottleDrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 20ab5938-0843-4ab7-aefd-787947816798
+    m_ActionName: Player/Select Up[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PurchasePaperPackageDrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7fcd3034-364d-4e9f-b914-72271dbe749f
+    m_ActionName: Player/Select Down[/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PurchaseCanDrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b663afc5-90f4-4daa-a924-ee6777bf9b05
+    m_ActionName: Player/Select Left[/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PurchaseBottleDrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6c7e8e51-1733-4f45-81d0-7638a45b5147
+    m_ActionName: Player/Select Right[/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4bff7fe1-bf67-4352-a09d-416cc9078d39
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a26e568f-44e1-4473-b6ea-cb185134835d
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 006cd591-8e32-459c-b7fa-1ed7fb7df1dd
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 45d38cd7-71a0-48b4-b4c2-f15fa90424d0
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aabf3c02-5c28-468a-bd48-b9d06028ac4d
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 067ca91b-ca89-46d9-b3d9-e387578cf489
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e993e8f7-c151-4422-b0e7-11c879326afc
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 54d28b4f-5df1-45f0-af83-04d31733bb29
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: edd1b9c9-9d9f-48ad-9eb5-0d874dd8d9e0
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c3e6106d-5dd1-4beb-bb94-c9f44302c16f
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -189,7 +313,19 @@ MonoBehaviour:
   Speed: 5
   projectile: {fileID: 6879255552944327415, guid: e050cfad57c76774994deefea46d321d,
     type: 3}
-  coin: {fileID: 0}
+  coin: {fileID: 3125868348779836731, guid: b2b28e12d1712eb44bcb8dfe36200f8f, type: 3}
+  CanBuyDrink: 0
+  vendingMachine: {fileID: 0}
+  PurchasedDrink: 0
+  canDrink: {fileID: 0}
+  JPY5Drink: {fileID: 1536126097797605512, guid: 63a3d626b20c82b439d34d0dcd58536d,
+    type: 3}
+  JPY10Drink: {fileID: 7150060477141793110, guid: 26884fa6985b76c498206bcfca0e03a6,
+    type: 3}
+  JPY15Drink: {fileID: 4307525302341467600, guid: bdec86e870baf8b499dd3baeaeb08735,
+    type: 3}
+  JPY20Drink: {fileID: 3430882643514554007, guid: b629dcd87ac01624ca2e5689a50db17e,
+    type: 3}
 --- !u!65 &3994567041626250100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -225,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thirstGauge: {fileID: 0}
   CoinText: {fileID: 0}
-  coin: {fileID: 0}
+  coin: {fileID: 3125868348779836731, guid: b2b28e12d1712eb44bcb8dfe36200f8f, type: 3}
   canvas: {fileID: 0}
 --- !u!54 &8224876145255490009
 Rigidbody:
