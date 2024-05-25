@@ -8,7 +8,7 @@ public class VendingMachineController : MonoBehaviour
     List<GameObject> playerList = new List<GameObject>();
 
     public void OnPlayerSelectUp(InputAction.CallbackContext context){
-
+        
     }
 
     public void OnPlayerSelectRight(InputAction.CallbackContext context){
