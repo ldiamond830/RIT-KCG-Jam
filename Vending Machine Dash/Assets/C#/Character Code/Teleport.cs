@@ -7,7 +7,6 @@ public class Teleport : MonoBehaviour
     [SerializeField] private bool isHorizontal;
     private void OnTriggerEnter(Collider other)
     {
-        var otherstuff = other.gameObject.GetComponent<PlayerMovement>();
         if(other.tag == "Player")
         {
             if (isHorizontal)

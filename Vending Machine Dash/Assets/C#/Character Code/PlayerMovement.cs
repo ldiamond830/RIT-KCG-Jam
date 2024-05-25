@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     [SerializeField] private Vector3 position;
     private Vector2 shootDirection;
+    public float Speed = 5f; 
 
     [SerializeField]
     private GameObject projectile = null;
@@ -74,22 +75,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.x > .5)
         {
-            position.Set( position.x + 5f * Time.deltaTime, position.y, position.z);
+            position.Set( position.x + Speed * Time.deltaTime, position.y, position.z);
         }
 
         else if (movement.x < -.5)
         {
-            position.Set(position.x - 5f * Time.deltaTime, position.y, position.z);
+            position.Set(position.x - Speed * Time.deltaTime, position.y, position.z);
         }
 
         else if (movement.y > 0.5)
         {
-            position.Set(position.x, position.y, position.z + 5f * Time.deltaTime);
+            position.Set(position.x, position.y, position.z + Speed * Time.deltaTime);
         }
 
         else if (movement.y < -.5)
         {
-            position.Set(position.x, position.y, position.z - 5f * Time.deltaTime);
+            position.Set(position.x, position.y, position.z - Speed * Time.deltaTime);
         }
     }
 
