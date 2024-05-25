@@ -2,11 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEditor;
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(Item))]
-#endif
 
 public enum CanKinds
 {
@@ -101,7 +96,7 @@ public class CanDrink : Item
         return Price;
     }
 
-
+    //on drink 15JPY Can
     private void onDrink15jpy(PlayerUI _player)
     {
         //_player.[shield flag] = true;
