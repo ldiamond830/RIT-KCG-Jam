@@ -195,6 +195,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3af0d2a0-d506-4f21-82fd-7e635cbb211e",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -207,7 +218,7 @@
                 {
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -251,7 +262,7 @@
                 {
                     "name": "",
                     "id": "c81b0274-e2ce-44e0-a7aa-eb69230e4b2c",
-                    "path": "<Gamepad>/dpad/up",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -273,7 +284,7 @@
                 {
                     "name": "",
                     "id": "e8f17a7b-97ae-4906-920a-1c75fc5cf439",
-                    "path": "<Gamepad>/dpad/down",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -295,7 +306,7 @@
                 {
                     "name": "",
                     "id": "b89dceac-c985-41c2-91ea-dcc07b68c366",
-                    "path": "<Gamepad>/dpad/left",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -317,7 +328,7 @@
                 {
                     "name": "",
                     "id": "1c378435-c6e8-405e-94da-4dd6e1ba35b3",
-                    "path": "<Gamepad>/dpad/right",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
