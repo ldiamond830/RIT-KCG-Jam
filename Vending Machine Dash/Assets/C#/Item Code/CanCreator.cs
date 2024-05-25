@@ -39,10 +39,11 @@ public class CanCreator : MonoBehaviour
         cans.Add(JsonUtility.FromJson<CansParameter>(json15jpy.text));
         cans.Add(JsonUtility.FromJson<CansParameter>(json20jpy.text));
 
-        foreach (var c in cans)
-        {
-            Debug.Log(c.Price);
-        }
+        ////Debug
+        //foreach (var c in cans)
+        //{
+        //    Debug.Log(c.Price);
+        //}
     }
 
     // Update is called once per frame
