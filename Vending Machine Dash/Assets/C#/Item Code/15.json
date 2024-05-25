@@ -1,6 +1,6 @@
 {
     "Price":15,
-    "RecoveryAmounts":0.5,
+    "RecoveryAmounts":50.0,
     "RestraintTime":3.0,
     "LostMoney":15,
     "ThrowingSpeed":2.0
