@@ -12,6 +12,8 @@ public class PlayerUI : MonoBehaviour
 
     [SerializeField]
     private Slider thirstGauge;
+    [SerializeField]
+    private Text CoinText;
 
     public float Thirst{
         get{return thirst;}
@@ -20,7 +22,11 @@ public class PlayerUI : MonoBehaviour
 
     public int Coins{
         get {return coins;}
-        set { coins = value;}
+        set 
+        { 
+            coins = value;
+            CoinText.text = coins + " ¥";
+        }
     }
 
 

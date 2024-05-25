@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 9f0b4b094a5758f43b9d74b2fb1836a0,
+  m_Actions: {fileID: -944628639613478452, guid: 8b1b24dcea4a15f4383e924cceb45dc0,
     type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
@@ -96,8 +96,52 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 217537be-a4d0-4c8e-a792-2a80bef6ae87
-    m_ActionName: Player Movement/Movement
+    m_ActionId: 9444e163-f57c-42f4-9e1d-4d8553bcbe0c
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee5be192-ef83-40b4-9174-3acee4f77af8
+    m_ActionName: Player/Fire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4bff7fe1-bf67-4352-a09d-416cc9078d39
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a26e568f-44e1-4473-b6ea-cb185134835d
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 006cd591-8e32-459c-b7fa-1ed7fb7df1dd
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 45d38cd7-71a0-48b4-b4c2-f15fa90424d0
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aabf3c02-5c28-468a-bd48-b9d06028ac4d
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 067ca91b-ca89-46d9-b3d9-e387578cf489
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e993e8f7-c151-4422-b0e7-11c879326afc
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 54d28b4f-5df1-45f0-af83-04d31733bb29
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: edd1b9c9-9d9f-48ad-9eb5-0d874dd8d9e0
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c3e6106d-5dd1-4beb-bb94-c9f44302c16f
+    m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5033355938518268018}
@@ -112,8 +156,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 4e8d5f41-73a4-46f1-a5fc-5e9ba5fad615
-    m_ActionName: Player Movement/Select Up
+    m_ActionId: 20ab5938-0843-4ab7-aefd-787947816798
+    m_ActionName: Player/Select Up
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5033355938518268018}
@@ -128,8 +172,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: d1180588-a48f-47b7-aea9-310a66d2963f
-    m_ActionName: Player Movement/Select Down
+    m_ActionId: 7fcd3034-364d-4e9f-b914-72271dbe749f
+    m_ActionName: Player/Select Down
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5033355938518268018}
@@ -144,8 +188,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 32e82ba2-5ef4-4c73-a5af-d09e23a20ac6
-    m_ActionName: Player Movement/Select Left
+    m_ActionId: b663afc5-90f4-4daa-a924-ee6777bf9b05
+    m_ActionName: Player/Select Left
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5033355938518268018}
@@ -160,15 +204,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: e248f629-310c-431e-a34c-361f59d51c18
-    m_ActionName: Player Movement/Select Right
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e74f6e97-77f9-4a03-9a52-1aabd0fce539
-    m_ActionName: Player Movement/Shoot
+    m_ActionId: 6c7e8e51-1733-4f45-81d0-7638a45b5147
+    m_ActionName: Player/Select Right
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player Movement
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &7917286979926368836
@@ -233,7 +273,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f236cbf8b9b7be44598f5f6ead57c802, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
