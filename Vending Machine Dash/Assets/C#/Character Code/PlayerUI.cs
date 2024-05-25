@@ -16,6 +16,8 @@ public class PlayerUI : MonoBehaviour
 
     [SerializeField]
     private GameObject coin;
+    [SerializeField]
+    private Canvas canvas;
 
     public float Thirst{
         get{return thirst;}
@@ -27,7 +29,7 @@ public class PlayerUI : MonoBehaviour
         set 
         { 
             coins = value;
-            //CoinText.text = coins + " ¥";
+            CoinText.text = coins + " ¥";
         }
     }
 
@@ -39,12 +41,34 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         thirst = maxThirst;
+        canvas = FindAnyObjectByType<Canvas>();
+
+        switch (this.transform.name)
+        {
+            case "Player 1(Clone)":
+                thirstGauge = canvas.transform.GetChild(0).GetChild(0).GetComponent<Slider>(); ;
+                coin = canvas.transform.GetChild(0).GetChild(1).gameObject;
+                break;
+            case "Player 2(Clone)":
+                thirstGauge = canvas.transform.GetChild(1).GetChild(0).GetComponent<Slider>(); ;
+                coin = canvas.transform.GetChild(1).GetChild(1).gameObject;
+                break;
+            case "Player 3(Clone)":
+                thirstGauge = canvas.transform.GetChild(2).GetChild(0).GetComponent<Slider>(); ;
+                coin = canvas.transform.GetChild(2).GetChild(1).gameObject;
+                break;
+            case "Player 4(Clone)":
+                thirstGauge = canvas.transform.GetChild(3).GetChild(0).GetComponent<Slider>(); ;
+                coin = canvas.transform.GetChild(3).GetChild(1).gameObject;
+                break;
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        //thirstGauge.value = thirst/maxThirst;
+        thirstGauge.value = thirst/maxThirst;
         thirst -= Time.deltaTime;
 
         if(thirst <= 0){
