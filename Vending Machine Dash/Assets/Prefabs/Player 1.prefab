@@ -189,7 +189,19 @@ MonoBehaviour:
     m_ActionId: ee5be192-ef83-40b4-9174-3acee4f77af8
     m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PurchasePETBottleDrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 20ab5938-0843-4ab7-aefd-787947816798
     m_ActionName: Player/Select Up[/XInputControllerWindows/dpad/up,/XInputControllerWindows/buttonNorth]
   - m_PersistentCalls:
@@ -209,11 +221,35 @@ MonoBehaviour:
     m_ActionId: 7fcd3034-364d-4e9f-b914-72271dbe749f
     m_ActionName: Player/Select Down[/XInputControllerWindows/dpad/down,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PurchaseCanDrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b663afc5-90f4-4daa-a924-ee6777bf9b05
     m_ActionName: Player/Select Left[/XInputControllerWindows/dpad/left,/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1589684341482231929}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: PurchaseBottleDrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6c7e8e51-1733-4f45-81d0-7638a45b5147
     m_ActionName: Player/Select Right[/XInputControllerWindows/dpad/right,/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
