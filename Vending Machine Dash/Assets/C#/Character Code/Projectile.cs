@@ -13,6 +13,10 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private int dropAmount;
 
+    private PlayerMovement owner;
+    public PlayerMovement Owner{
+        set{owner = value;}
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -31,20 +35,27 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Hit(other);
-        Destroy(gameObject);
+        var move = other.GetComponent<PlayerMovement>();
+         if(move != owner){
+            Hit(other, move);
+            Destroy(gameObject);
+         }
+        
     }
 
-    protected virtual void Hit(Collider other){
+    protected virtual void Hit(Collider other, PlayerMovement move){
         if(other.tag == "Player"){
-           //stun player and have them drop money 
+            
+           
+            //stun player and have them drop money 
            var UI = other.GetComponent<PlayerUI>();
            
 
             UI.DropMoney(dropAmount);
 
-           var move = other.GetComponent<PlayerMovement>();
+           
            move.Stun(stunDuration);
+           
         }
     }
 }

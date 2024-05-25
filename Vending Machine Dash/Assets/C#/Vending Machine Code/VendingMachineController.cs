@@ -27,7 +27,7 @@ public class VendingMachineController : MonoBehaviour
     {
         get { return onCoolDown; }
     }
-
+/*
     public void OnPlayerSelectUp(InputAction.CallbackContext context){
         if(playerList.Count > 0)
         {
@@ -59,15 +59,11 @@ public class VendingMachineController : MonoBehaviour
             player.Projectile = LeftDrink;
         }
     }
+    */
     // Start is called before the first frame update
     void Start()
     {
-        creator = this.gameObject.AddComponent<CanCreator>();
 
-        creator.AddCanDrink(RightDrink, CanKinds.JPY5);
-        creator.AddCanDrink(UpDrink, CanKinds.JPY10);
-        creator.AddCanDrink(LeftDrink, CanKinds.JPY15);
-        creator.AddCanDrink(DownDrink, CanKinds.JPY20);
     }
 
     // Update is called once per frame
@@ -80,7 +76,6 @@ public class VendingMachineController : MonoBehaviour
             if(coolDownTimer <= 0)
             {
                 onCoolDown = false;
-
             }
         }
     }

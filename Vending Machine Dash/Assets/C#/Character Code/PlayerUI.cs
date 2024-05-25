@@ -6,7 +6,7 @@ public class PlayerUI : MonoBehaviour
 {
     private float thirst;
     private const float maxThirst = 50;
-    private int coins = 10;
+    private int coins = 60;
     private bool isDead;
 
     [SerializeField]
@@ -51,20 +51,20 @@ public class PlayerUI : MonoBehaviour
         switch (this.transform.name)
         {
             case "Player 1(Clone)":
-                thirstGauge = canvas.transform.GetChild(0).GetChild(0).GetComponent<Slider>(); ;
-                CoinText = canvas.transform.GetChild(0).GetChild(1).gameObject.GetComponent<Text>();
+                thirstGauge = canvas.transform.GetChild(2).GetComponent<Slider>(); ;
+                CoinText = canvas.transform.GetChild(3).gameObject.GetComponent<Text>();
                 break;
             case "Player 2(Clone)":
-                thirstGauge = canvas.transform.GetChild(1).GetChild(0).GetComponent<Slider>(); ;
-                 CoinText = canvas.transform.GetChild(1).GetChild(1).gameObject.GetComponent<Text>();
+                thirstGauge = canvas.transform.GetChild(0).GetComponent<Slider>(); ;
+                 CoinText = canvas.transform.GetChild(1).gameObject.GetComponent<Text>();
                 break;
             case "Player 3(Clone)":
-                thirstGauge = canvas.transform.GetChild(2).GetChild(0).GetComponent<Slider>(); ;
-                 CoinText = canvas.transform.GetChild(2).GetChild(1).gameObject.GetComponent<Text>();
+                thirstGauge = canvas.transform.GetChild(6).GetComponent<Slider>(); ;
+                 CoinText = canvas.transform.GetChild(7).gameObject.GetComponent<Text>();
                 break;
             case "Player 4(Clone)":
-                thirstGauge = canvas.transform.GetChild(3).GetChild(0).GetComponent<Slider>(); ;
-                 CoinText = canvas.transform.GetChild(3).GetChild(1).gameObject.GetComponent<Text>();
+                thirstGauge = canvas.transform.GetChild(4).GetComponent<Slider>(); ;
+                 CoinText = canvas.transform.GetChild(5).gameObject.GetComponent<Text>();
                 break;
 
         }

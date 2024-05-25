@@ -49,8 +49,9 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 fwd = new Vector3(shootDirection.x, 0, shootDirection.y);
             newProjectile.transform.position = transform.position + fwd;
-            newProjectile.GetComponentInChildren<Projectile>().Throw(fwd);
-
+            Projectile ProjectileData = newProjectile.GetComponentInChildren<Projectile>();
+            ProjectileData.Throw(fwd);
+            ProjectileData.Owner = this;
             projectile = null;
         }
         
@@ -127,8 +128,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void PurchasePaperPackageDrink(InputAction.CallbackContext context)
     {
-        Debug.Log("drink called");
-        //Drink Can
         if (CanBuyDrink && CanCreator.Instance.cans[CanKinds.JPY5].Price <= UI.Coins && !vendingMachine.OnCoolDown)
         {
             vendingMachine.StartCoolDown();
@@ -138,6 +137,50 @@ public class PlayerMovement : MonoBehaviour
         
 
             projectile = JPY5Drink;
+        }
+    }
+
+     public void PurchaseCanDrink(InputAction.CallbackContext context)
+    {
+        if (CanBuyDrink && CanCreator.Instance.cans[CanKinds.JPY10].Price <= UI.Coins && !vendingMachine.OnCoolDown)
+        {
+            vendingMachine.StartCoolDown();
+            UI.Coins -= CanCreator.Instance.cans[CanKinds.JPY10].Price;
+            UI.Thirst += CanCreator.Instance.cans[CanKinds.JPY10].RecoveryAmount;
+
+        
+
+            projectile = JPY10Drink;
+        }
+    }
+
+    public void PurchasePETBottleDrink(InputAction.CallbackContext context)
+    {
+        if (CanBuyDrink && CanCreator.Instance.cans[CanKinds.JPY15].Price <= UI.Coins && !vendingMachine.OnCoolDown)
+        {
+            vendingMachine.StartCoolDown();
+            UI.Coins -= CanCreator.Instance.cans[CanKinds.JPY15].Price;
+            UI.Thirst += CanCreator.Instance.cans[CanKinds.JPY15].RecoveryAmount;
+
+        
+
+            projectile = JPY15Drink;
+
+            //set up invincibility
+        }
+    }
+
+     public void PurchaseBottleDrink(InputAction.CallbackContext context)
+    {
+        if (CanBuyDrink && CanCreator.Instance.cans[CanKinds.JPY20].Price <= UI.Coins && !vendingMachine.OnCoolDown)
+        {
+            vendingMachine.StartCoolDown();
+            UI.Coins -= CanCreator.Instance.cans[CanKinds.JPY20].Price;
+            UI.Thirst += CanCreator.Instance.cans[CanKinds.JPY20].RecoveryAmount;
+
+        
+
+            projectile = JPY20Drink;
         }
     }
 

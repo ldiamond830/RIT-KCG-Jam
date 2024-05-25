@@ -9,7 +9,7 @@ using UnityEngine;
 /// <summary>
 /// Generate CanDrink and CanEmpty.
 /// </summary>
-public class CanCreator : MonoBehaviour
+public class CanCreator
 {
     private static CanCreator instance;
     public static CanCreator Instance
