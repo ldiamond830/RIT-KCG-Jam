@@ -75,8 +75,35 @@ public class CanDrink : Item
                 //Recovery thirst
                 playerUI.Thirst += RecoveryAmounts;
             }
+
+            switch (Price)
+            {
+                case CanKinds.MAX:
+                default:
+                case CanKinds.EMPTY:
+                    break;
+
+                case CanKinds.JPY5:
+                    break;
+
+                case CanKinds.JPY10:
+                    break;
+
+                case CanKinds.JPY15:
+                    onDrink15jpy(playerUI);
+                    break;
+
+                case CanKinds.JPY20:
+                    break;
+            }
         }
 
         return Price;
+    }
+
+
+    private void onDrink15jpy(PlayerUI _player)
+    {
+        //_player.[shield flag] = true;
     }
 }
