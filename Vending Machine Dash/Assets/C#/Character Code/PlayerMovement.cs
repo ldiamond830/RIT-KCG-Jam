@@ -13,11 +13,6 @@ public class PlayerMovement : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         position = this.transform.position;
-        if (playerInput.actions["Select Up"].triggered)
-        {
-            Debug.Log("ji");
-
-        }
     }
 
     // Update is called once per frame
@@ -25,32 +20,33 @@ public class PlayerMovement : MonoBehaviour
     {
         position = this.transform.position;
         Move();
+        this.transform.position = position;
     }
 
     private void Move()
     {
-        Vector2 movement = playerInput.actions["Movement"].ReadValue<Vector2>();
+        Vector2 movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
-        Debug.Log(movement);
+        //Debug.Log(movement);
 
-        if (movement.x > 0 && Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+        if (movement.x > .5)
         {
             position.Set( position.x + 5f * Time.deltaTime, position.y, position.z);
         }
 
-        if (movement.x < 0 && Mathf.Abs(movement.x) < Mathf.Abs(movement.y))
+        else if (movement.x < -.5)
         {
             position.Set(position.x - 5f * Time.deltaTime, position.y, position.z);
         }
 
-        if (movement.y > 0 && Mathf.Abs(movement.y) > Mathf.Abs(movement.x))
+        else if (movement.y > 0.5)
         {
-            position.Set(position.x, position.y + 5f * Time.deltaTime, position.z);
+            position.Set(position.x, position.y, position.z + 5f * Time.deltaTime);
         }
 
-        if (movement.y < 0 && Mathf.Abs(movement.y) < Mathf.Abs(movement.x))
+        else if (movement.y < -.5)
         {
-            position.Set(position.x, position.y - 5f * Time.deltaTime, position.z);
+            position.Set(position.x, position.y, position.z - 5f * Time.deltaTime);
         }
     }
 }
