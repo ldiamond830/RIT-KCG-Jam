@@ -11,10 +11,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private GameObject projectile;
-   public void OnShoot(InputValue value){
-        Debug.Log("shoot");
-        Instantiate<GameObject>(projectile);
-        projectile.GetComponent<Projectile>().Throw(new Vector3(direction.x, 0, direction.y));
+
+    private bool stunned;
+
+   public void OnFire(InputValue context){
+        GameObject newProjectile = Instantiate<GameObject>(projectile);
+        Vector3 fwd = new Vector3(direction.x, 0, direction.y);
+        newProjectile.transform.position = transform.position + fwd;
+        newProjectile.GetComponentInChildren<Projectile>().Throw(fwd);
     }
 
 
@@ -28,9 +32,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        position = this.transform.position;
-        Move();
-        this.transform.position = position;
+        if(!stunned){
+            position = this.transform.position;
+            Move();
+            this.transform.position = position; 
+        }
+        else{
+            
+        }
     }
 
     private void Move()
@@ -58,5 +67,9 @@ public class PlayerMovement : MonoBehaviour
         {
             position.Set(position.x, position.y, position.z - 5f * Time.deltaTime);
         }
+    }
+
+    public void Stun(float time){
+
     }
 }
