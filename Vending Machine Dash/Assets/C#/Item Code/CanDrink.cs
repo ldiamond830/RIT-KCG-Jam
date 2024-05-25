@@ -8,6 +8,16 @@ using UnityEditor;
 [CustomEditor(typeof(Item))]
 #endif
 
+public enum CanKinds
+{
+    EMPTY,
+    JPY5,
+    JPY10,
+    JPY15,
+    JPY20,
+    MAX
+}
+
 public class CanDrink : Item
 {
 
@@ -21,7 +31,7 @@ public class CanDrink : Item
     /// Price<br/>
     /// ã‡äz
     /// </summary>
-    public int Price { get; private set; }
+    public CanKinds Price { get; private set; }
 
     // Start is called before the first frame update
     void Start()
