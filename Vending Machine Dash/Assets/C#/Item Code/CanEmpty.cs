@@ -26,6 +26,21 @@ public class CanEmpty : Item
     /// </summary>
     public int LostMoney { get; private set; }
 
+    /// <summary>
+    /// Speed of throwing cans. <br/>
+    /// 缶を投げる速度
+    /// </summary>
+    public float ThrowingSpeed { get; private set; }
+
+
+    //缶のプログラムで実装しようか迷っているが、プレイヤーで実装した方がいいかもしれない。
+    //I am not sure whether to implement it in the can program,
+    //but it might be better to implement it in the player.
+    ///// <summary>
+    ///// Process when collision into a player.<br/>
+    ///// プレイヤーに当たった時の処理
+    ///// </summary>
+    //public Action<PlayerUI> OnHitPlayer;
 
 
     // Start is called before the first frame update
@@ -38,5 +53,45 @@ public class CanEmpty : Item
     void Update()
     {
         
+    }
+
+    //Set parameter
+    public void Init(float _restraintTime, int _lostMoney, float _throwingSpeed)
+    {
+        RestraintTime = _restraintTime;
+        LostMoney = _lostMoney;
+        ThrowingSpeed = _throwingSpeed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //If CanEmpty and Player collide
+        //もしお金とプレイヤーが衝突したら
+        if (collision.collider.CompareTag("Player"))
+        {
+            //Get PlayerUI
+            var playerUI = collision.gameObject.GetComponent<PlayerUI>();
+
+            if (playerUI != null)
+            {
+                //Distinguish between 20JPY and the rest.
+                //20JPYとそれ以外を区別する
+                if (LostMoney < 0)
+                {//20JPY
+
+                    //Lost all money
+                    playerUI.Coins = 0;
+                }
+                else
+                {//other
+
+                    //Lost money
+                    playerUI.Coins -= LostMoney;
+                }
+            }
+
+            //Delete this Can
+            Destroy(this);
+        }
     }
 }

@@ -6,30 +6,37 @@ using UnityEngine.InputSystem;
 
 public class PlayManager : MonoBehaviour
 {
-    PlayerInputManager manager;
-    public GameObject[] Players;
+    private PlayerInputManager playerInputManager;
+    [SerializeField] private GameObject player1;
+    [SerializeField] private GameObject player2;
+    [SerializeField] private GameObject player3;
+    [SerializeField] private GameObject player4;
+    public GameObject[] playerList;
 
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void OnEnable()
     {
-        manager = GetComponent<PlayerInputManager>();
-        Players = new GameObject[4];
+        playerInputManager = GetComponent<PlayerInputManager>();
+        playerList = new GameObject[] { player1, player2, player3, player4 };
+
+    }
+
+    private void Awake()
+    {
+        Vector3[] playerPositions = { new Vector3(5, 0, 5), new Vector3(5, 0, -5), new Vector3(-5, 0, 5), new Vector3(-5, 0, -5) };
+        playerInputManager = GetComponent<PlayerInputManager>();
+        playerList = new GameObject[] { player1, player2, player3, player4 };
         for (int i = 0; i < 4; i++)
         {
-            manager.JoinPlayer();
+            OnPlayerJoined();
+            playerInputManager.JoinPlayer().transform.position = playerPositions[i];
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void OnPlayerJoined()
     {
-        
+        if (playerInputManager != null)
+            playerInputManager.playerPrefab = playerList[playerInputManager.playerCount];
     }
-    public void OnPlayerJoined(PlayerInput playerInput)
-    {
-        //if (manager != null)
-            //manager. playerPrefab = playerList[playerInputManger.playerCount];
-    }
-
 }
