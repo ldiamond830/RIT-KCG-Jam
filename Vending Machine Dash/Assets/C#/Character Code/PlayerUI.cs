@@ -29,7 +29,6 @@ public class PlayerUI : MonoBehaviour
         set 
         { 
             coins = value;
-            CoinText.text = coins + " ¥";
         }
     }
 
@@ -47,19 +46,19 @@ public class PlayerUI : MonoBehaviour
         {
             case "Player 1(Clone)":
                 thirstGauge = canvas.transform.GetChild(0).GetChild(0).GetComponent<Slider>(); ;
-                coin = canvas.transform.GetChild(0).GetChild(1).gameObject;
+                CoinText = canvas.transform.GetChild(0).GetChild(1).gameObject.GetComponent<Text>();
                 break;
             case "Player 2(Clone)":
                 thirstGauge = canvas.transform.GetChild(1).GetChild(0).GetComponent<Slider>(); ;
-                coin = canvas.transform.GetChild(1).GetChild(1).gameObject;
+                 CoinText = canvas.transform.GetChild(1).GetChild(1).gameObject.GetComponent<Text>();
                 break;
             case "Player 3(Clone)":
                 thirstGauge = canvas.transform.GetChild(2).GetChild(0).GetComponent<Slider>(); ;
-                coin = canvas.transform.GetChild(2).GetChild(1).gameObject;
+                 CoinText = canvas.transform.GetChild(2).GetChild(1).gameObject.GetComponent<Text>();
                 break;
             case "Player 4(Clone)":
                 thirstGauge = canvas.transform.GetChild(3).GetChild(0).GetComponent<Slider>(); ;
-                coin = canvas.transform.GetChild(3).GetChild(1).gameObject;
+                 CoinText = canvas.transform.GetChild(3).GetChild(1).gameObject.GetComponent<Text>();
                 break;
 
         }
@@ -74,19 +73,24 @@ public class PlayerUI : MonoBehaviour
         if(thirst <= 0){
             isDead = true;
         }
+
+        CoinText.text = coins + " ¥";
     }
 
      public void DropMoney(int amt){
+        Debug.Log(amt);   
         if(amt > coins){
             amt = coins;
         }
+        coins -= amt;
+
         Vector3 random = new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
-        //Duplicate coins from Player to a random range.
-        GameObject newCoin = Instantiate(coin,
-            this.transform.position + random,
-            this.transform.rotation);
-        //Set newCoin.moneyAmount to amt
-        newCoin.GetComponent<Money>().moneyAmounts = amt;
+        GameObject newCoin = Instantiate(coin);
+        newCoin.transform.position = transform.position + random;
+        var money = newCoin.GetComponent<Money>();
+        money.moneyAmounts = amt;
+        money.enabled = false;
+        money.timeTillEnabled = 0.3f;
     }
 
 }
