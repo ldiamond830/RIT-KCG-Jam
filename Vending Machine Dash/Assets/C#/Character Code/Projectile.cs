@@ -9,6 +9,10 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     protected float stunDuration;
     private Vector3 direction = new Vector2(1,0);
+
+    [SerializeField]
+    private int dropAmount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +39,14 @@ public class Projectile : MonoBehaviour
         if(other.tag == "Player"){
            //stun player and have them drop money 
            var UI = other.GetComponent<PlayerUI>();
-           UI.DropMoney(15);
-           UI.Coins -= 15;
+           
 
             if(UI.Coins < 0){
                 UI.Coins = 0;
             }
+
+            UI.DropMoney(dropAmount);
+            UI.Coins -= dropAmount;
 
            var move = other.GetComponent<PlayerMovement>();
            move.Stun(stunDuration);

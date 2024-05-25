@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject projectile = null;
 
+    public GameObject Projectile{
+        set {projectile = value;}
+    }
     private bool stunned;
     private float stunTimer;
     private float iFrameTimer;
@@ -28,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
             newProjectile.transform.position = transform.position + fwd;
             newProjectile.GetComponentInChildren<Projectile>().Throw(fwd);
 
-            projectile = null;
+            //projectile = null;
         }
         
     }
