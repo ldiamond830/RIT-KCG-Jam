@@ -28,6 +28,7 @@ public class PlayerManager : MonoBehaviour
         {
             OnPlayerJoined();
             playerList[i] = playerInputManager.JoinPlayer().transform.gameObject;
+            Debug.Log(playerList[i].name);
             playerList[i].transform.position = playerPositions[i];
         }
     }

@@ -13,7 +13,20 @@ public class VendingMachineController : MonoBehaviour
     private GameObject DownDrink;
     [SerializeField]
     private GameObject LeftDrink;
+    [SerializeField]
+    private float coolDown;
     List<GameObject> playerList = new List<GameObject>();
+
+    [SerializeField]
+    private PlayerManager manager;
+
+    private bool onCoolDown;
+    private float coolDownTimer;
+
+    public bool OnCoolDown
+    {
+        get { return onCoolDown; }
+    }
 
     public void OnPlayerSelectUp(InputAction.CallbackContext context){
         
@@ -39,14 +52,25 @@ public class VendingMachineController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (onCoolDown)
+        {
+            coolDownTimer -= Time.deltaTime;
+
+            if(coolDownTimer <= 0)
+            {
+                onCoolDown = false;
+
+            }
+        }
     }
 
    // 範囲内の全選手を保存
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player"){
-            playerList.Add(other.gameObject);
+            PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+            player.CanBuyDrink = true;
+            player.vendingMachine = this;
         }
     }
 
@@ -54,7 +78,15 @@ public class VendingMachineController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Player" && playerList.Contains(other.gameObject)){
-            playerList.Remove(other.gameObject);
+            PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+            player.CanBuyDrink = false;
+            player.vendingMachine = null;
         }
+    }
+
+    public void StartCoolDown()
+    {
+        onCoolDown = true;
+        coolDownTimer = coolDown;
     }
 }

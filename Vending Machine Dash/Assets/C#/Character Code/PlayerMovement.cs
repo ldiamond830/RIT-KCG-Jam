@@ -24,7 +24,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GameObject coin;
 
-   public void OnFire(InputValue context){
+    public bool CanBuyDrink;
+    public VendingMachineController vendingMachine;
+    public bool PurchasedDrink;
+
+    private PlayerUI UI;
+
+    [SerializeField]
+    private CanDrink canDrink;
+
+    [SerializeField]
+    private GameObject JPY5Drink;
+    [SerializeField]
+    private GameObject JPY10Drink;
+    [SerializeField]
+    private GameObject JPY15Drink;
+    [SerializeField]
+    private GameObject JPY20Drink;
+
+    public void OnFire(InputAction.CallbackContext context)
+    {
         if(projectile != null){
             GameObject newProjectile = Instantiate<GameObject>(projectile);
 
@@ -32,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
             newProjectile.transform.position = transform.position + fwd;
             newProjectile.GetComponentInChildren<Projectile>().Throw(fwd);
 
-            //projectile = null;
+            projectile = null;
         }
         
     }
@@ -42,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
+        UI = GetComponent<PlayerUI>();
         position = this.transform.position;
     }
 
@@ -102,6 +122,22 @@ public class PlayerMovement : MonoBehaviour
         stunned = true;
         stunTimer = time;
         iFrameTimer = 0.4f;
+        }
+    }
+
+    public void PurchasePaperPackageDrink(InputAction.CallbackContext context)
+    {
+        Debug.Log("drink called");
+        //Drink Can
+        if (CanBuyDrink && CanCreator.Instance.cans[CanKinds.JPY5].Price <= UI.Coins && !vendingMachine.OnCoolDown)
+        {
+            vendingMachine.StartCoolDown();
+            UI.Coins -= CanCreator.Instance.cans[CanKinds.JPY5].Price;
+            UI.Thirst += CanCreator.Instance.cans[CanKinds.JPY5].RecoveryAmount;
+
+        
+
+            projectile = JPY5Drink;
         }
     }
 
