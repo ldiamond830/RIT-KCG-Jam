@@ -11,14 +11,35 @@ using UnityEngine;
 /// </summary>
 public class CanCreator : MonoBehaviour
 {
+    private static CanCreator instance;
+    public static CanCreator Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = new CanCreator();
+            }
+
+            return instance;
+        }
+    }
+
     [Serializable]
-    private class CansParameter
+    public class CansParameter
     {
         public int Price;
         public float RecoveryAmounts;
         public float RestraintTime;
         public int LostMoney;
         public float ThrowingSpeed;
+    }
+
+    public struct CanConfig
+    {
+        public int Price;
+        public float RecoveryAmount;
+
     }
 
     [SerializeField]
@@ -28,16 +49,27 @@ public class CanCreator : MonoBehaviour
         json15jpy,
         json20jpy;
 
-    private List<CansParameter> cans;
+    public Dictionary<CanKinds, CanConfig> cans;
+
+    private CanCreator()
+    {
+        cans = new Dictionary<CanKinds, CanConfig>();
+        /*
+        cans.Add(CanKinds.JPY5, JsonUtility.FromJson<CansParameter>(json5jpy.text));
+        cans.Add(CanKinds.JPY10, JsonUtility.FromJson<CansParameter>(json10jpy.text));
+        cans.Add(CanKinds.JPY15, JsonUtility.FromJson<CansParameter>(json15jpy.text));
+        cans.Add(CanKinds.JPY20, JsonUtility.FromJson<CansParameter>(json20jpy.text));
+        */
+        cans.Add(CanKinds.JPY5, new CanConfig {Price= 5, RecoveryAmount = 20.0f});
+        cans.Add(CanKinds.JPY10, new CanConfig { Price = 10, RecoveryAmount = 30.0f });
+        cans.Add(CanKinds.JPY15, new CanConfig { Price = 15, RecoveryAmount = 50.0f });
+        cans.Add(CanKinds.JPY20, new CanConfig { Price = 20, RecoveryAmount = 70.0f });
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        cans = new List<CansParameter>();
-        cans.Add(JsonUtility.FromJson<CansParameter>(json5jpy.text));
-        cans.Add(JsonUtility.FromJson<CansParameter>(json10jpy.text));
-        cans.Add(JsonUtility.FromJson<CansParameter>(json15jpy.text));
-        cans.Add(JsonUtility.FromJson<CansParameter>(json20jpy.text));
+        
 
         ////Debug
         //foreach (var c in cans)
@@ -58,6 +90,8 @@ public class CanCreator : MonoBehaviour
     /// <param name="_gameObject">GameObject to add CanEmpty.</param>
     /// <param name="_canKinds">Kind of Can.(Price)</param>
     /// <returns></returns>
+    /// 
+    /*
     public CanDrink AddCanDrink(GameObject _gameObject, CanKinds _canKinds)
     {
         var canDrink = _gameObject.AddComponent<CanDrink>();
@@ -129,4 +163,5 @@ public class CanCreator : MonoBehaviour
 
         return canEmpty;
     }
+    */
 }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class PlayerUI : MonoBehaviour
 {
     private float thirst;
-    private const float maxThirst = 100;
-    private int coins;
+    private const float maxThirst = 50;
+    private int coins = 10;
     private bool isDead;
 
     [SerializeField]
@@ -21,7 +21,13 @@ public class PlayerUI : MonoBehaviour
 
     public float Thirst{
         get{return thirst;}
-        set {thirst = value;}
+        set {thirst = value;
+        
+            if(thirst > maxThirst)
+            {
+                thirst = maxThirst;
+            }
+        }
     }
 
     public int Coins{
