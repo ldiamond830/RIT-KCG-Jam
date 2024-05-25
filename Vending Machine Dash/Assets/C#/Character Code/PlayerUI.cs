@@ -9,6 +9,7 @@ public class PlayerUI : MonoBehaviour
     private float thirst;
     private const float maxThirst = 100;
     private int coins;
+    private bool isDead;
 
     [SerializeField]
     private Slider thirstGauge;
@@ -29,6 +30,9 @@ public class PlayerUI : MonoBehaviour
         }
     }
 
+    public bool IsDead{
+        get{return isDead;}
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +45,9 @@ public class PlayerUI : MonoBehaviour
     {
         thirstGauge.value = thirst/maxThirst;
         thirst -= Time.deltaTime;
+
+        if(thirst <= 0){
+            isDead = true;
+        }
     }
 }

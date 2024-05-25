@@ -184,6 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
+  projectile: {fileID: 6879255552944327415, guid: e050cfad57c76774994deefea46d321d,
+    type: 3}
 --- !u!65 &3994567041626250100
 BoxCollider:
   m_ObjectHideFlags: 0
