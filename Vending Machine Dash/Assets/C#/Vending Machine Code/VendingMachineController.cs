@@ -15,25 +15,48 @@ public class VendingMachineController : MonoBehaviour
     private GameObject LeftDrink;
     List<GameObject> playerList = new List<GameObject>();
 
+    CanCreator creator;
+
     public void OnPlayerSelectUp(InputAction.CallbackContext context){
-        
+        if(playerList.Count > 0)
+        {
+            var player = playerList[0].GetComponent<PlayerMovement>();
+            player.Projectile = UpDrink;
+        }
     }
 
     public void OnPlayerSelectRight(InputAction.CallbackContext context){
-        
+        if (playerList.Count > 0)
+        {
+            var player = playerList[0].GetComponent<PlayerMovement>();
+            player.Projectile = RightDrink;
+        }
     }
 
     public void OnPlayerSelectDown(InputAction.CallbackContext context){
-        
+        if (playerList.Count > 0)
+        {
+            var player = playerList[0].GetComponent<PlayerMovement>();
+            player.Projectile = DownDrink;
+        }
     }
 
     public void OnPlayerSelectLeft(InputAction.CallbackContext context){
-        
+        if (playerList.Count > 0)
+        {
+            var player = playerList[0].GetComponent<PlayerMovement>();
+            player.Projectile = LeftDrink;
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        creator = this.gameObject.AddComponent<CanCreator>();
+
+        creator.AddCanDrink(RightDrink, CanKinds.JPY5);
+        creator.AddCanDrink(UpDrink, CanKinds.JPY10);
+        creator.AddCanDrink(LeftDrink, CanKinds.JPY15);
+        creator.AddCanDrink(DownDrink, CanKinds.JPY20);
     }
 
     // Update is called once per frame

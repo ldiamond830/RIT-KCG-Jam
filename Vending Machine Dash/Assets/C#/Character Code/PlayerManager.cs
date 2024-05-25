@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     {
         playerInputManager = GetComponent<PlayerInputManager>();
         playerList = new GameObject[] { player1, player2, player3, player4 };
-        Vector3[] playerPositions = { new Vector3(-5, 0, 5), new Vector3(-5, 0, -5), new Vector3(5, 0, -5), new Vector3(5, 0, 5) };
+        Vector3[] playerPositions = { new Vector3(-5, .5f, 5), new Vector3(-5, .5f, -5), new Vector3(5, .5f, -5), new Vector3(5, .5f, 5) };
         playerInputManager = GetComponent<PlayerInputManager>();
 
         for (int i = 0; i < numberOfPlayers; i++)
