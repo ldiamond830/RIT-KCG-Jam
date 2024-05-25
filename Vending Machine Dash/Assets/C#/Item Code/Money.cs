@@ -8,6 +8,8 @@ using UnityEditor;
 [CustomEditor(typeof(Item))]
 #endif
 
+//Memo 
+//[GameObject].GetComponentInParent<Money>();
 
 public class Money : Item
 {
@@ -27,5 +29,25 @@ public class Money : Item
     void Update()
     {
         
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //If Money and Player collide
+        //Ç‡ÇµÇ®ã‡Ç∆ÉvÉåÉCÉÑÅ[Ç™è’ìÀÇµÇΩÇÁ
+        if (collision.collider.CompareTag("Player"))
+        {
+            //Get PlayerUI
+            var playerUI = collision.gameObject.GetComponent<PlayerUI>();
+
+            if (playerUI != null)
+            {
+                //Add Money in PlayerUI
+                playerUI.Coins += MoneyAmounts;
+            }
+
+            //Delete this Money
+            Destroy(this);
+        }
     }
 }
