@@ -24,18 +24,14 @@ public class PlayManager : MonoBehaviour
 
     private void Awake()
     {
+        Vector3[] playerPositions = { new Vector3(5, 0, 5), new Vector3(5, 0, -5), new Vector3(-5, 0, 5), new Vector3(-5, 0, -5) };
         playerInputManager = GetComponent<PlayerInputManager>();
         playerList = new GameObject[] { player1, player2, player3, player4 };
         for (int i = 0; i < 4; i++)
         {
             OnPlayerJoined();
-            playerInputManager.JoinPlayer();
+            playerInputManager.JoinPlayer().transform.position = playerPositions[i];
         }
-
-        player1.transform.position = new Vector3(5, 0, 5);
-        player2.transform.position = new Vector3(5, 0, -5);
-        player3.transform.position = new Vector3(-5, 0, 5);
-        player4.transform.position = new Vector3(-5, 0, -5);
     }
 
     public void OnPlayerJoined()
