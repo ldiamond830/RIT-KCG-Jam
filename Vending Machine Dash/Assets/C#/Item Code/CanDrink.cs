@@ -48,6 +48,13 @@ public class CanDrink : Item
         
     }
 
+    ///Set parameter
+    public void Init(float _recoveryAmounts, CanKinds _price)
+    {
+        RecoveryAmounts = _recoveryAmounts;
+        Price = _price;
+    }
+
     /// <summary>
     /// Drink Can<br/>
     /// ŠÊ‚ğˆù‚Ş
@@ -56,10 +63,20 @@ public class CanDrink : Item
     /// Price of can drunk.<br/>
     /// ˆù‚ñ‚¾ŠÊ‚Ì‰¿Ši
     /// </returns>
-    public CanKinds Drink()
+    public CanKinds Drink(GameObject _player)
     {
-        // Maybe there are other processes...
-        //‚à‚µ‚©‚µ‚½‚ç‘¼‚É‚àˆ—‚ğ‚·‚é‚©‚à‚µ‚ê‚È‚¢EEE
+        if (_player.CompareTag("Player"))
+        {
+            //Get PlayerUI
+            var playerUI = _player.GetComponent<PlayerUI>();
+
+            if (playerUI != null)
+            {
+                //Recovery thirst
+                playerUI.Thirst += RecoveryAmounts;
+            }
+        }
+
         return Price;
     }
 }
