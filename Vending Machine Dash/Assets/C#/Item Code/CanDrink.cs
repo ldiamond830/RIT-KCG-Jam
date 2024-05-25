@@ -18,6 +18,9 @@ public enum CanKinds
     MAX
 }
 
+//Memo 
+//[GameObject].GetComponentInParent<CanDrink>();
+
 public class CanDrink : Item
 {
 
@@ -43,5 +46,20 @@ public class CanDrink : Item
     void Update()
     {
         
+    }
+
+    /// <summary>
+    /// Drink Can<br/>
+    /// ŠÊ‚ğˆù‚Ş
+    /// </summary>
+    /// <returns>
+    /// Price of can drunk.<br/>
+    /// ˆù‚ñ‚¾ŠÊ‚Ì‰¿Ši
+    /// </returns>
+    public CanKinds Drink()
+    {
+        // Maybe there are other processes...
+        //‚à‚µ‚©‚µ‚½‚ç‘¼‚É‚àˆ—‚ğ‚·‚é‚©‚à‚µ‚ê‚È‚¢EEE
+        return Price;
     }
 }

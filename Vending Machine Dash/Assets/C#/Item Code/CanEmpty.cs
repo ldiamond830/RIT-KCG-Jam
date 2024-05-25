@@ -8,6 +8,9 @@ using UnityEditor;
 [CustomEditor(typeof(Item))]
 #endif
 
+//Memo 
+//[GameObject].GetComponentInParent<CanEmpty>();
+
 public class CanEmpty : Item
 {
 

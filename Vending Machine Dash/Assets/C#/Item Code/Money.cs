@@ -8,6 +8,8 @@ using UnityEditor;
 [CustomEditor(typeof(Item))]
 #endif
 
+//Memo 
+//[GameObject].GetComponentInParent<Money>();
 
 public class Money : Item
 {

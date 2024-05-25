@@ -12,6 +12,9 @@ public enum ItemTypes
     MAX
 };
 
+//Memo 
+//[GameObject].GetComponentInParent<Item>();
+
 public class Item : MonoBehaviour
 {
     /// <summary>
