@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEditor;
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(Item))]
-#endif
 
 //Memo 
 //[GameObject].GetComponentInParent<Money>();
 
 public class Money : Item
 {
+
+    public int moneyAmounts;
     /// <summary>
-    /// Amount of money<br/>
-    /// ã‡äz
+    /// Amount of money
     /// </summary>
     public int MoneyAmounts { get; private set; }
 
@@ -31,11 +27,11 @@ public class Money : Item
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("dshfgadp");
         //If Money and Player collide
-        //Ç‡ÇµÇ®ã‡Ç∆ÉvÉåÉCÉÑÅ[Ç™è’ìÀÇµÇΩÇÁ
-        if (collision.collider.CompareTag("Player"))
+        if (collision.transform.tag == "Player")
         {
             //Get PlayerUI
             var playerUI = collision.gameObject.GetComponent<PlayerUI>();
@@ -43,11 +39,11 @@ public class Money : Item
             if (playerUI != null)
             {
                 //Add Money in PlayerUI
-                playerUI.Coins += MoneyAmounts;
+                playerUI.Coins += moneyAmounts;
             }
 
             //Delete this Money
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }

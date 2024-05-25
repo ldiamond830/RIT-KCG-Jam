@@ -1,16 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
+
+
 /// <summary>
-/// CanDrinkÇ‚CanEmptyÇê∂ê¨Ç∑ÇÈ
+/// Generate CanDrink and CanEmpty.
 /// </summary>
 public class CanCreator : MonoBehaviour
 {
+    [Serializable]
+    private class CansParameter
+    {
+        public int Price;
+        public float RecoveryAmounts;
+        public float RestraintTime;
+        public int LostMoney;
+        public float ThrowingSpeed;
+    }
+
+    [SerializeField]
+    private TextAsset
+        json5jpy,
+        json10jpy,
+        json15jpy,
+        json20jpy;
+
+    private List<CansParameter> cans;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        cans = new List<CansParameter>();
+        cans.Add(JsonUtility.FromJson<CansParameter>(json5jpy.text));
+        cans.Add(JsonUtility.FromJson<CansParameter>(json10jpy.text));
+        cans.Add(JsonUtility.FromJson<CansParameter>(json15jpy.text));
+        cans.Add(JsonUtility.FromJson<CansParameter>(json20jpy.text));
+
+        ////Debug
+        //foreach (var c in cans)
+        //{
+        //    Debug.Log(c.Price);
+        //}
     }
 
     // Update is called once per frame
@@ -20,8 +53,7 @@ public class CanCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Add the specified CanEmpty to the passed GameObject and returns CanEmpty.<br/>
-    /// ìnÇ≥ÇÍÇΩGameObjectÇ…éwíËÇµÇΩCanEmptyÇí«â¡ÇµÇƒCanEmptyÇï‘Ç∑
+    /// Add the specified CanEmpty to the passed GameObject and returns CanEmpty.
     /// </summary>
     /// <param name="_gameObject">GameObject to add CanEmpty.</param>
     /// <param name="_canKinds">Kind of Can.(Price)</param>
@@ -36,23 +68,23 @@ public class CanCreator : MonoBehaviour
             default:
             case CanKinds.MAX:
             case CanKinds.EMPTY:
-                canDrink.Init(0.2f, CanKinds.JPY5);
+                canDrink.Init(cans[0].RecoveryAmounts, CanKinds.JPY5);
                 break;
 
             case CanKinds.JPY5:
-                canDrink.Init(0.2f, CanKinds.JPY5);
+                canDrink.Init(cans[0].RecoveryAmounts, CanKinds.JPY5);
                 break;
 
             case CanKinds.JPY10:
-                canDrink.Init(0.3f, CanKinds.JPY10);
+                canDrink.Init(cans[1].RecoveryAmounts, CanKinds.JPY10);
                 break;
 
             case CanKinds.JPY15:
-                canDrink.Init(0.5f, CanKinds.JPY15);
+                canDrink.Init(cans[2].RecoveryAmounts, CanKinds.JPY15);
                 break;
 
             case CanKinds.JPY20:
-                canDrink.Init(0.7f, CanKinds.JPY20);
+                canDrink.Init(cans[3].RecoveryAmounts, CanKinds.JPY20);
                 break;
         }
 
@@ -60,8 +92,7 @@ public class CanCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Add the specified CanDrink to the passed GameObject and returns CanDrink.<br/>
-    /// ìnÇ≥ÇÍÇΩGameObjectÇ…éwíËÇµÇΩCanDrinkÇí«â¡ÇµÇƒCanDrinkÇï‘Ç∑
+    /// Add the specified CanDrink to the passed GameObject and returns CanDrink.
     /// </summary>
     /// <param name="_gameObject">GameObject to add CanDrink.</param>
     /// <param name="_canKinds">Kind of Can.(Price)</param>
@@ -70,36 +101,29 @@ public class CanCreator : MonoBehaviour
     {
         var canEmpty = _gameObject.AddComponent<CanEmpty>();
 
-        //throw speed
-        //Fast
-        float throwFast = 5f;
-
-        //Slow
-        float throwSlow = 2f;
-
         switch (_canKinds)
         {
             //exception
             default:
             case CanKinds.MAX:
             case CanKinds.EMPTY:
-                canEmpty.Init(3, 15, throwSlow);
+                canEmpty.Init(cans[0].RestraintTime, cans[0].LostMoney, cans[0].ThrowingSpeed);
                 break;
 
             case CanKinds.JPY5:
-                canEmpty.Init(5, 15, throwSlow);
+                canEmpty.Init(cans[0].RestraintTime, cans[0].LostMoney, cans[0].ThrowingSpeed);
                 break;
 
             case CanKinds.JPY10:
-                canEmpty.Init(3, 15, throwFast);
+                canEmpty.Init(cans[1].RestraintTime, cans[1].LostMoney, cans[1].ThrowingSpeed);
                 break;
 
             case CanKinds.JPY15:
-                canEmpty.Init(3, 15, throwSlow);
+                canEmpty.Init(cans[2].RestraintTime, cans[2].LostMoney, cans[2].ThrowingSpeed);
                 break;
 
             case CanKinds.JPY20:
-                canEmpty.Init(3, -1, throwFast);
+                canEmpty.Init(cans[3].RestraintTime, cans[3].LostMoney, cans[3].ThrowingSpeed);
                 break;
         }
 

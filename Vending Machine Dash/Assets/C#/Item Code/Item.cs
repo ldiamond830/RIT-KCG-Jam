@@ -18,8 +18,7 @@ public enum ItemTypes
 public class Item : MonoBehaviour
 {
     /// <summary>
-    /// Item Type<br/>
-    /// ƒAƒCƒeƒ€‚ÌŽí—Þ
+    /// Item Type
     /// </summary>
     public ItemTypes Type { get; protected set; }
 

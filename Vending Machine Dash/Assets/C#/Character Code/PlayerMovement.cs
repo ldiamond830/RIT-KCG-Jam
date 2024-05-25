@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
     private bool stunned;
     private float stunTimer;
     private float iFrameTimer;
+    
+    [SerializeField]
+    private GameObject coin;
 
    public void OnFire(InputValue context){
         if(projectile != null){
@@ -97,4 +100,5 @@ public class PlayerMovement : MonoBehaviour
         iFrameTimer = 0.4f;
         }
     }
+
 }

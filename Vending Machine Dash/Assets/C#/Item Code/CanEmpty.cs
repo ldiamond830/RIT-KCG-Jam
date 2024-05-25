@@ -2,11 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEditor;
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(Item))]
-#endif
 
 //Memo 
 //[GameObject].GetComponentInParent<CanEmpty>();
@@ -66,7 +61,6 @@ public class CanEmpty : Item
     private void OnCollisionEnter(Collision collision)
     {
         //If CanEmpty and Player collide
-        //もしお金とプレイヤーが衝突したら
         if (collision.collider.CompareTag("Player"))
         {
             //Get PlayerUI
@@ -75,7 +69,6 @@ public class CanEmpty : Item
             if (playerUI != null)
             {
                 //Distinguish between 20JPY and the rest.
-                //20JPYとそれ以外を区別する
                 if (LostMoney < 0)
                 {//20JPY
 

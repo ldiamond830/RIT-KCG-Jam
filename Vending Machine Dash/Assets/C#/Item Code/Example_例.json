@@ -1,0 +1,7 @@
+{Example 項目の例
+    "Price"(値段):[整数 int (5/10/15/20)],
+    "RecoveryAmounts"(ゲージの回復量):[少数 float (0-1)],
+    "RestraintTime"(被弾時の拘束時間):[少数 float (秒 seconds)],
+    "LostMoney"(被弾時に失うお金):[整数 int],
+    "ThrowingSpeed"(缶を投げる速度):[少数 float]
+}

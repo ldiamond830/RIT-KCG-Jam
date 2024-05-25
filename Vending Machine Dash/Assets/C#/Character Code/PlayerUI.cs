@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +13,9 @@ public class PlayerUI : MonoBehaviour
     private Slider thirstGauge;
     [SerializeField]
     private Text CoinText;
+
+    [SerializeField]
+    private GameObject coin;
 
     public float Thirst{
         get{return thirst;}
@@ -50,4 +51,14 @@ public class PlayerUI : MonoBehaviour
             isDead = true;
         }
     }
+
+     public void DropMoney(int amt){
+        if(amt > coins){
+            amt = coins;
+        }
+        Vector3 random = new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
+        GameObject newCoin = Instantiate(coin);
+        newCoin.GetComponent<Money>().moneyAmounts = amt;
+    }
+
 }

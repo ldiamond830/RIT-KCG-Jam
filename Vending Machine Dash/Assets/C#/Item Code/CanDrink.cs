@@ -2,11 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEditor;
-
-#if UNITY_EDITOR
-[CustomEditor(typeof(Item))]
-#endif
 
 public enum CanKinds
 {
@@ -25,14 +20,12 @@ public class CanDrink : Item
 {
 
     /// <summary>
-    /// Amount of recovery of gauge.<br/>
-    /// ƒQ[ƒW‚Ì‰ñ•œ—Ê
+    /// Amount of recovery of gauge.
     /// </summary>
     public float RecoveryAmounts { get; set; }
 
     /// <summary>
-    /// Price<br/>
-    /// ‹àŠz
+    /// Price
     /// </summary>
     public CanKinds Price { get; private set; }
 
@@ -56,12 +49,10 @@ public class CanDrink : Item
     }
 
     /// <summary>
-    /// Drink Can<br/>
-    /// ŠÊ‚ğˆù‚Ş
+    /// Drink Can
     /// </summary>
     /// <returns>
-    /// Price of can drunk.<br/>
-    /// ˆù‚ñ‚¾ŠÊ‚Ì‰¿Ši
+    /// Price of can drunk.
     /// </returns>
     public CanKinds Drink(GameObject _player)
     {
@@ -101,7 +92,7 @@ public class CanDrink : Item
         return Price;
     }
 
-
+    //on drink 15JPY Can
     private void onDrink15jpy(PlayerUI _player)
     {
         //_player.[shield flag] = true;

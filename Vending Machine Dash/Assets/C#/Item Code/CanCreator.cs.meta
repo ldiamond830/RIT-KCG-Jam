@@ -3,7 +3,11 @@ guid: 4ceb9a2c90eed364e8657fa491a812cc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - json5jpy: {fileID: 4900000, guid: b92bc2839554d914e9345e55119e8af3, type: 3}
+  - json10jpy: {fileID: 4900000, guid: 8239abf7245993e4dba8361885d8bd44, type: 3}
+  - json15jpy: {fileID: 4900000, guid: 5389c0287d8afac4b9f352890ec8f43c, type: 3}
+  - json20jpy: {fileID: 4900000, guid: 625d32a4fb1324140ac882f08c753ea9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
