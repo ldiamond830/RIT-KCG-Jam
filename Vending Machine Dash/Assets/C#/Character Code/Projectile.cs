@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     protected float speed;
     [SerializeField]
     protected float stunDuration;
-    private Vector3 direction;
+    private Vector3 direction = new Vector2(1,0);
     // Start is called before the first frame update
     void Start()
     {
@@ -18,32 +18,28 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
         gameObject.transform.position += direction * speed * Time.deltaTime;
     }
 
     public void Throw(Vector3 direction){
         this.direction = direction;
-=======
-        
-    }
-
-    public void Throw(Vector3 direction){
-        
->>>>>>> Stashed changes
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player"){
-<<<<<<< Updated upstream
            //stun player and have them drop money 
-           Debug.Log("player hit");
-=======
-           
->>>>>>> Stashed changes
+           var UI = other.GetComponent<PlayerUI>();
+           UI.Coins -= 15;
+
+            if(UI.Coins < 0){
+                UI.Coins = 0;
+            }
+
+           var move = other.GetComponent<PlayerMovement>();
+           move.Stun(stunDuration);
         }
 
-        Destroy(this);
+        Destroy(gameObject);
     }
 }

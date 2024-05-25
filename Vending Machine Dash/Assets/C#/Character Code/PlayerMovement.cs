@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,14 +8,20 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerInput playerInput;
     [SerializeField] private Vector3 position;
-    private Vector2 direction;
+    private Vector2 shootDirection;
 
     [SerializeField]
     private GameObject projectile;
-   public void OnShoot(InputValue value){
-        Debug.Log("shoot");
-        Instantiate<GameObject>(projectile);
-        projectile.GetComponent<Projectile>().Throw(new Vector3(direction.x, 0, direction.y));
+
+    private bool stunned;
+    private float stunTimer;
+    private float iFrameTimer;
+
+   public void OnFire(InputValue context){
+        GameObject newProjectile = Instantiate<GameObject>(projectile);
+        Vector3 fwd = new Vector3(shootDirection.x, 0, shootDirection.y);
+        newProjectile.transform.position = transform.position + fwd;
+        newProjectile.GetComponentInChildren<Projectile>().Throw(fwd);
     }
 
 
@@ -28,35 +35,60 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        position = this.transform.position;
-        Move();
-        this.transform.position = position;
+        if(!stunned){
+            position = this.transform.position;
+            Move();
+            this.transform.position = position; 
+
+            if(iFrameTimer > 0){
+                iFrameTimer -= Time.deltaTime;
+            }
+        }
+        else{
+            stunTimer -= Time.deltaTime;
+
+            if(stunTimer <= 0){
+                stunned = false;
+            }
+        }
     }
 
     private void Move()
     {
-        direction = playerInput.actions["Move"].ReadValue<Vector2>();
+        Vector2 movement = playerInput.actions["Move"].ReadValue<Vector2>();
+
+        if(movement != Vector2.zero){
+            shootDirection = movement;
+        }
 
         //Debug.Log(movement);
 
-        if (direction.x > .5)
+        if (movement.x > .5)
         {
             position.Set( position.x + 5f * Time.deltaTime, position.y, position.z);
         }
 
-        else if (direction.x < -.5)
+        else if (movement.x < -.5)
         {
             position.Set(position.x - 5f * Time.deltaTime, position.y, position.z);
         }
 
-        else if (direction.y > 0.5)
+        else if (movement.y > 0.5)
         {
             position.Set(position.x, position.y, position.z + 5f * Time.deltaTime);
         }
 
-        else if (direction.y < -.5)
+        else if (movement.y < -.5)
         {
             position.Set(position.x, position.y, position.z - 5f * Time.deltaTime);
+        }
+    }
+
+    public void Stun(float time){
+        if(!stunned && iFrameTimer <= 0){
+        stunned = true;
+        stunTimer = time;
+        iFrameTimer = 0.4f;
         }
     }
 }
