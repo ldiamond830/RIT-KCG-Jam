@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
         if(other.tag == "Player"){
            //stun player and have them drop money 
            var UI = other.GetComponent<PlayerUI>();
+           UI.DropMoney(15);
            UI.Coins -= 15;
 
             if(UI.Coins < 0){
