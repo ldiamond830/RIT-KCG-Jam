@@ -7,7 +7,7 @@ using UnityEngine;
 
 
 /// <summary>
-/// CanDrink‚âCanEmpty‚ğ¶¬‚·‚é
+/// Generate CanDrink and CanEmpty.
 /// </summary>
 public class CanCreator : MonoBehaviour
 {
@@ -52,8 +52,7 @@ public class CanCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Add the specified CanEmpty to the passed GameObject and returns CanEmpty.<br/>
-    /// “n‚³‚ê‚½GameObject‚Éw’è‚µ‚½CanEmpty‚ğ’Ç‰Á‚µ‚ÄCanEmpty‚ğ•Ô‚·
+    /// Add the specified CanEmpty to the passed GameObject and returns CanEmpty.
     /// </summary>
     /// <param name="_gameObject">GameObject to add CanEmpty.</param>
     /// <param name="_canKinds">Kind of Can.(Price)</param>
@@ -92,8 +91,7 @@ public class CanCreator : MonoBehaviour
     }
 
     /// <summary>
-    /// Add the specified CanDrink to the passed GameObject and returns CanDrink.<br/>
-    /// “n‚³‚ê‚½GameObject‚Éw’è‚µ‚½CanDrink‚ğ’Ç‰Á‚µ‚ÄCanDrink‚ğ•Ô‚·
+    /// Add the specified CanDrink to the passed GameObject and returns CanDrink.
     /// </summary>
     /// <param name="_gameObject">GameObject to add CanDrink.</param>
     /// <param name="_canKinds">Kind of Can.(Price)</param>

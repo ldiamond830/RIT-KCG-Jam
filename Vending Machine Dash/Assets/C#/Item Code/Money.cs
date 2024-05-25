@@ -11,8 +11,7 @@ public class Money : Item
 
     public int moneyAmounts;
     /// <summary>
-    /// Amount of money<br/>
-    /// ���z
+    /// Amount of money
     /// </summary>
     public int MoneyAmounts { get; private set; }
 
@@ -32,7 +31,6 @@ public class Money : Item
     {
         Debug.Log("dshfgadp");
         //If Money and Player collide
-        //���������ƃv���C���[���Փ˂�����
         if (collision.transform.tag == "Player")
         {
             //Get PlayerUI
