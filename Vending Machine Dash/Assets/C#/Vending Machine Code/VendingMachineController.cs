@@ -5,6 +5,14 @@ using UnityEngine.InputSystem;
 
 public class VendingMachineController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject UpDrink;
+    [SerializeField]
+    private GameObject RightDrink;
+    [SerializeField]
+    private GameObject DownDrink;
+    [SerializeField]
+    private GameObject LeftDrink;
     List<GameObject> playerList = new List<GameObject>();
 
     public void OnPlayerSelectUp(InputAction.CallbackContext context){

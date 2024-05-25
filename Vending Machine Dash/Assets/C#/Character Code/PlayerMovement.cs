@@ -11,17 +11,23 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 shootDirection;
 
     [SerializeField]
-    private GameObject projectile;
+    private GameObject projectile = null;
 
     private bool stunned;
     private float stunTimer;
     private float iFrameTimer;
 
    public void OnFire(InputValue context){
-        GameObject newProjectile = Instantiate<GameObject>(projectile);
-        Vector3 fwd = new Vector3(shootDirection.x, 0, shootDirection.y);
-        newProjectile.transform.position = transform.position + fwd;
-        newProjectile.GetComponentInChildren<Projectile>().Throw(fwd);
+        if(projectile != null){
+            GameObject newProjectile = Instantiate<GameObject>(projectile);
+
+            Vector3 fwd = new Vector3(shootDirection.x, 0, shootDirection.y);
+            newProjectile.transform.position = transform.position + fwd;
+            newProjectile.GetComponentInChildren<Projectile>().Throw(fwd);
+
+            projectile = null;
+        }
+        
     }
 
 
@@ -58,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movement = playerInput.actions["Move"].ReadValue<Vector2>();
 
         if(movement != Vector2.zero){
-            shootDirection = movement;
+            shootDirection = movement.normalized;
         }
 
         //Debug.Log(movement);

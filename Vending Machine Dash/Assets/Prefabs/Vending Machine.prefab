@@ -68,6 +68,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911b7eaad6cea2a44a1a66fe7240221b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UpDrink: {fileID: 7150060477141793110, guid: 26884fa6985b76c498206bcfca0e03a6, type: 3}
+  RightDrink: {fileID: 1536126097797605512, guid: 63a3d626b20c82b439d34d0dcd58536d,
+    type: 3}
+  DownDrink: {fileID: 3430882643514554007, guid: b629dcd87ac01624ca2e5689a50db17e,
+    type: 3}
+  LeftDrink: {fileID: 4307525302341467600, guid: bdec86e870baf8b499dd3baeaeb08735,
+    type: 3}
 --- !u!114 &4410849727265645901
 MonoBehaviour:
   m_ObjectHideFlags: 0

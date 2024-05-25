@@ -27,6 +27,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Hit(other);
+        Destroy(gameObject);
+    }
+
+    protected virtual void Hit(Collider other){
         if(other.tag == "Player"){
            //stun player and have them drop money 
            var UI = other.GetComponent<PlayerUI>();
@@ -39,7 +44,5 @@ public class Projectile : MonoBehaviour
            var move = other.GetComponent<PlayerMovement>();
            move.Stun(stunDuration);
         }
-
-        Destroy(gameObject);
     }
 }
