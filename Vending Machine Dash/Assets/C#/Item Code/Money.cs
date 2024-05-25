@@ -13,9 +13,11 @@ using UnityEditor;
 
 public class Money : Item
 {
+
+    public int moneyAmounts;
     /// <summary>
     /// Amount of money<br/>
-    /// ‹àŠz
+    /// ï¿½ï¿½ï¿½z
     /// </summary>
     public int MoneyAmounts { get; private set; }
 
@@ -31,11 +33,12 @@ public class Money : Item
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
+        Debug.Log("dshfgadp");
         //If Money and Player collide
-        //‚à‚µ‚¨‹à‚ÆƒvƒŒƒCƒ„[‚ªÕ“Ë‚µ‚½‚ç
-        if (collision.collider.CompareTag("Player"))
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Õ“Ë‚ï¿½ï¿½ï¿½ï¿½ï¿½
+        if (collision.transform.tag == "Player")
         {
             //Get PlayerUI
             var playerUI = collision.gameObject.GetComponent<PlayerUI>();
@@ -43,11 +46,11 @@ public class Money : Item
             if (playerUI != null)
             {
                 //Add Money in PlayerUI
-                playerUI.Coins += MoneyAmounts;
+                playerUI.Coins += moneyAmounts;
             }
 
             //Delete this Money
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
