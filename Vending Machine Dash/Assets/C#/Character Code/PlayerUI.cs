@@ -29,7 +29,6 @@ public class PlayerUI : MonoBehaviour
         set 
         { 
             coins = value;
-            CoinText.text = coins + " ¥";
         }
     }
 
@@ -74,12 +73,17 @@ public class PlayerUI : MonoBehaviour
         if(thirst <= 0){
             isDead = true;
         }
+
+        CoinText.text = coins + " ¥";
     }
 
      public void DropMoney(int amt){
+        Debug.Log(amt);   
         if(amt > coins){
             amt = coins;
         }
+        coins -= amt;
+
         Vector3 random = new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
         GameObject newCoin = Instantiate(coin);
         newCoin.transform.position = transform.position + random;

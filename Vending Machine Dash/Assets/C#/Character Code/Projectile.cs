@@ -41,12 +41,7 @@ public class Projectile : MonoBehaviour
            var UI = other.GetComponent<PlayerUI>();
            
 
-            if(UI.Coins < 0){
-                UI.Coins = 0;
-            }
-
             UI.DropMoney(dropAmount);
-            UI.Coins -= dropAmount;
 
            var move = other.GetComponent<PlayerMovement>();
            move.Stun(stunDuration);
