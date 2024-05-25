@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 1589684341482231929}
   - component: {fileID: 3994567041626250100}
   - component: {fileID: 5081309400728499447}
+  - component: {fileID: 7921482366581178924}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -311,3 +312,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7921482366581178924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640921287753512113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d74437f4d873c34c9b8be509c18e18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thirstGauge: {fileID: 0}
+  CoinText: {fileID: 0}

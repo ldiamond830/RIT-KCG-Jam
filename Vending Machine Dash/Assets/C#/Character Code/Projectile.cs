@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     protected float speed;
     [SerializeField]
     protected float stunDuration;
-    private Vector3 direction;
+    private Vector3 direction = new Vector2(1,0);
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +40,6 @@ public class Projectile : MonoBehaviour
            move.Stun(stunDuration);
         }
 
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
