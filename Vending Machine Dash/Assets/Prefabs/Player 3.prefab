@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3a8bb1b29e066ce4d853c24129a3e6a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,13 +116,9 @@ GameObject:
   - component: {fileID: 4285234068666348395}
   - component: {fileID: 5707985761575299606}
   - component: {fileID: 1589684341482231929}
-<<<<<<< Updated upstream
   - component: {fileID: 3994567041626250100}
-=======
-  - component: {fileID: 4171133583595069316}
->>>>>>> Stashed changes
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,21 +184,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-  projectile: {fileID: 6879255552944327415, guid: e050cfad57c76774994deefea46d321d,
-    type: 3}
 --- !u!65 &3994567041626250100
 BoxCollider:
-=======
---- !u!114 &4171133583595069316
-MonoBehaviour:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7640921287753512113}
-<<<<<<< Updated upstream
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -217,12 +205,3 @@ MonoBehaviour:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
-=======
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d74437f4d873c34c9b8be509c18e18c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thirstGauge: {fileID: 0}
-  CoinText: {fileID: 0}
->>>>>>> Stashed changes

@@ -7,6 +7,16 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerInput playerInput;
     [SerializeField] private Vector3 position;
+    private Vector2 direction;
+
+    [SerializeField]
+    private GameObject projectile;
+   public void OnShoot(InputValue value){
+        Debug.Log("shoot");
+        Instantiate<GameObject>(projectile);
+        projectile.GetComponent<Projectile>().Throw(new Vector3(direction.x, 0, direction.y));
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,26 +35,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        Vector2 movement = playerInput.actions["Move"].ReadValue<Vector2>();
+        direction = playerInput.actions["Move"].ReadValue<Vector2>();
 
         //Debug.Log(movement);
 
-        if (movement.x > .5)
+        if (direction.x > .5)
         {
             position.Set( position.x + 5f * Time.deltaTime, position.y, position.z);
         }
 
-        else if (movement.x < -.5)
+        else if (direction.x < -.5)
         {
             position.Set(position.x - 5f * Time.deltaTime, position.y, position.z);
         }
 
-        else if (movement.y > 0.5)
+        else if (direction.y > 0.5)
         {
             position.Set(position.x, position.y, position.z + 5f * Time.deltaTime);
         }
 
-        else if (movement.y < -.5)
+        else if (direction.y < -.5)
         {
             position.Set(position.x, position.y, position.z - 5f * Time.deltaTime);
         }
