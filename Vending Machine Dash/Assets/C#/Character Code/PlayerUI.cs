@@ -57,7 +57,11 @@ public class PlayerUI : MonoBehaviour
             amt = coins;
         }
         Vector3 random = new Vector3(Random.Range(-2, 2), 0, Random.Range(-2, 2));
-        GameObject newCoin = Instantiate(coin);
+        //Duplicate coins from Player to a random range.
+        GameObject newCoin = Instantiate(coin,
+            this.transform.position + random,
+            this.transform.rotation);
+        //Set newCoin.moneyAmount to amt
         newCoin.GetComponent<Money>().moneyAmounts = amt;
     }
 
