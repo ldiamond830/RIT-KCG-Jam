@@ -26,7 +26,7 @@ public class PlayerUI : MonoBehaviour
         set 
         { 
             coins = value;
-            CoinText.text = coins + " ¥";
+            //CoinText.text = coins + " ¥";
         }
     }
 
@@ -43,7 +43,7 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        thirstGauge.value = thirst/maxThirst;
+        //thirstGauge.value = thirst/maxThirst;
         thirst -= Time.deltaTime;
 
         if(thirst <= 0){
