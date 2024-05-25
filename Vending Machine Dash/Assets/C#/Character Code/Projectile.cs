@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
     }
 
     protected virtual void Hit(Collider other, PlayerMovement move){
-        if(other.tag == "Player"){
+        if(other.tag == "Player" && !move.Barrier){
             
            
             //stun player and have them drop money 
