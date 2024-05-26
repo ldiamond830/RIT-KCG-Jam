@@ -40,7 +40,7 @@ public class PlayerManager : MonoBehaviour
     public void OnPlayerJoined()
     {
         if (playerInputManager != null)
-            playerInputManager.playerPrefab = playerList[playerInputManager.playerCount - 1];
+            playerInputManager.playerPrefab = playerList[playerInputManager.playerCount];
     }
 
     public void Update()
