@@ -23,15 +23,13 @@ public class PlayerManager : MonoBehaviour
     {
         playerInputManager = GetComponent<PlayerInputManager>();
         playerList = new GameObject[] { player1, player2, player3, player4 };
-        Vector3[] playerPositions = { new Vector3(-5.15999985f, 1.01999998f, -6.92000008f), new Vector3(-5, .5f, -5), new Vector3(5, .5f, -5), new Vector3(5, .5f, 5) };
+        Vector3[] playerPositions = { new Vector3(-8, 1, 5), new Vector3(8, 1, 5), new Vector3(-8, 1, -5), new Vector3(8, 1, -5) };
         playerInputManager = GetComponent<PlayerInputManager>();
 
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            var gm = playerInputManager.JoinPlayer().transform.gameObject;
             OnPlayerJoined();
-            
-            playerList[i] = gm;
+            playerList[i] = playerInputManager.JoinPlayer().transform.gameObject;
             Debug.Log(playerList[i].name);
             playerList[i].transform.position = playerPositions[i];
         }
@@ -40,7 +38,7 @@ public class PlayerManager : MonoBehaviour
     public void OnPlayerJoined()
     {
         if (playerInputManager != null)
-            playerInputManager.playerPrefab = playerList[playerInputManager.playerCount - 1];
+            playerInputManager.playerPrefab = playerList[playerInputManager.playerCount];
     }
 
     public void Update()

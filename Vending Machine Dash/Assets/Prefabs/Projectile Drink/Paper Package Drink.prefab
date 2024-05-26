@@ -152,3 +152,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   stunDuration: 0.5
+  dropAmount: 6

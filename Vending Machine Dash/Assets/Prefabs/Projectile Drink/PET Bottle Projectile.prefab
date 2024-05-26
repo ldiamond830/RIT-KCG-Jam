@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   stunDuration: 0.5
+  dropAmount: 6
 --- !u!1 &4307525302341467600
 GameObject:
   m_ObjectHideFlags: 0
