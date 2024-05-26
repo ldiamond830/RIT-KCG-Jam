@@ -28,10 +28,8 @@ public class PlayerManager : MonoBehaviour
 
         for (int i = 0; i < numberOfPlayers; i++)
         {
-            var gm = playerInputManager.JoinPlayer().transform.gameObject;
             OnPlayerJoined();
-            
-            playerList[i] = gm;
+            playerList[i] = playerInputManager.JoinPlayer().transform.gameObject;
             Debug.Log(playerList[i].name);
             playerList[i].transform.position = playerPositions[i];
         }
