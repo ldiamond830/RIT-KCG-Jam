@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyAmounts: 5
+  timeTillEnabled: 0
 --- !u!1 &6141031023497492557
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +84,7 @@ GameObject:
   - component: {fileID: 7332244170544554424}
   m_Layer: 0
   m_Name: "Model (\u4EEE\u30E2\u30C7\u30EB)"
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

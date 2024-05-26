@@ -326,6 +326,7 @@ MonoBehaviour:
     type: 3}
   JPY20Drink: {fileID: 3430882643514554007, guid: b629dcd87ac01624ca2e5689a50db17e,
     type: 3}
+  barrierTime: 0
 --- !u!65 &3994567041626250100
 BoxCollider:
   m_ObjectHideFlags: 0

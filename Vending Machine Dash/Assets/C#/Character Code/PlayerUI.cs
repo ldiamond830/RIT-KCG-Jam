@@ -51,20 +51,20 @@ public class PlayerUI : MonoBehaviour
         switch (this.transform.name)
         {
             case "Player 1(Clone)":
-                thirstGauge = canvas.transform.GetChild(2).GetComponent<Slider>(); ;
-                CoinText = canvas.transform.GetChild(3).gameObject.GetComponent<Text>();
+                thirstGauge = canvas.transform.GetChild(1).GetComponent<Slider>(); ;
+                CoinText = canvas.transform.GetChild(2).gameObject.GetComponent<Text>();
                 break;
             case "Player 2(Clone)":
-                thirstGauge = canvas.transform.GetChild(0).GetComponent<Slider>(); ;
-                 CoinText = canvas.transform.GetChild(1).gameObject.GetComponent<Text>();
-                break;
-            case "Player 3(Clone)":
-                thirstGauge = canvas.transform.GetChild(6).GetComponent<Slider>(); ;
-                 CoinText = canvas.transform.GetChild(7).gameObject.GetComponent<Text>();
-                break;
-            case "Player 4(Clone)":
                 thirstGauge = canvas.transform.GetChild(4).GetComponent<Slider>(); ;
                  CoinText = canvas.transform.GetChild(5).gameObject.GetComponent<Text>();
+                break;
+            case "Player 3(Clone)":
+                thirstGauge = canvas.transform.GetChild(7).GetComponent<Slider>(); ;
+                 CoinText = canvas.transform.GetChild(8).gameObject.GetComponent<Text>();
+                break;
+            case "Player 4(Clone)":
+                thirstGauge = canvas.transform.GetChild(10).GetComponent<Slider>(); ;
+                 CoinText = canvas.transform.GetChild(11).gameObject.GetComponent<Text>();
                 break;
 
         }
@@ -81,6 +81,11 @@ public class PlayerUI : MonoBehaviour
         }
 
         CoinText.text = coins + " ¥";
+
+        if (isDead)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
      public void DropMoney(int amt){

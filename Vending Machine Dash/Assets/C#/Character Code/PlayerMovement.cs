@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
             GameObject newProjectile = Instantiate<GameObject>(projectile);
 
             Vector3 fwd = new Vector3(shootDirection.x, 0, shootDirection.y);
-            newProjectile.transform.position = transform.position + fwd;
+            newProjectile.transform.position = transform.position + (fwd * 2);
             Projectile ProjectileData = newProjectile.GetComponentInChildren<Projectile>();
             ProjectileData.Throw(fwd);
             ProjectileData.Owner = this;
