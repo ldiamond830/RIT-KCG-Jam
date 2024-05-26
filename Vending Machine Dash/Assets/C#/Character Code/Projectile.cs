@@ -37,12 +37,16 @@ public class Projectile : MonoBehaviour
     {
         var move = other.GetComponent<PlayerMovement>();
 
-         if(move != owner){
+        if (move != owner)
+        {
             Debug.Log("Hit: " + other.name);
             Hit(other, move);
+
+        }
+        if (other.tag != "Coin")
+        {
             Destroy(gameObject);
-         }
-        
+        }
     }
 
     protected virtual void Hit(Collider other, PlayerMovement move){
