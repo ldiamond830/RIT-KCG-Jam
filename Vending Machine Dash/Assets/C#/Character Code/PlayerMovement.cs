@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 shootDirection;
     public float Speed = 5f; 
 
-    [SerializeField]
+
     private GameObject projectile = null;
 
     public GameObject Projectile{
