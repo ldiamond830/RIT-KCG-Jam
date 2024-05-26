@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -37,5 +38,29 @@ public class PlayerManager : MonoBehaviour
     {
         if (playerInputManager != null)
             playerInputManager.playerPrefab = playerList[playerInputManager.playerCount];
+    }
+
+    public void Update()
+    {
+        int aliveCount = numberOfPlayers;
+        for (int i = 0; i < numberOfPlayers; i++)
+        {
+            if (playerList[i].GetComponent<PlayerUI>().IsDead)
+            {
+                aliveCount--;
+            }
+        }
+
+        if(aliveCount == 1)
+        {
+            for(int i = 0; i < numberOfPlayers; i++)
+            {
+                if (!playerList[i].GetComponent<PlayerUI>().IsDead)
+                {
+                    PlayerPrefs.SetString("winner", "PLAYER " + (i + 1));
+                    SceneManager.LoadScene("WinScene");
+                }
+            }
+        }
     }
 }
