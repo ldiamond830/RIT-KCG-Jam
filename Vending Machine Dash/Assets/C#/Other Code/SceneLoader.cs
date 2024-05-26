@@ -26,7 +26,7 @@ public class SceneLoader : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Start Menu")
         {
-            SceneManager.LoadScene("GameField1");
+            SceneManager.LoadScene("GameFieldBackUp");
         }
     }
 }
