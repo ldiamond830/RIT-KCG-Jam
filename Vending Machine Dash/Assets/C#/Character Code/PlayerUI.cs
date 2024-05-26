@@ -6,7 +6,7 @@ public class PlayerUI : MonoBehaviour
 {
     private float thirst;
     private const float maxThirst = 50;
-    private int coins = 60;
+    private int coins = 10;
     private bool isDead;
 
     [SerializeField]
