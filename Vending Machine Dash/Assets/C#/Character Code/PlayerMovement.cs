@@ -129,21 +129,25 @@ public class PlayerMovement : MonoBehaviour
         if (movement.x > .5)
         {
             position.Set( position.x + Speed * Time.deltaTime, position.y, position.z);
+            this.transform.LookAt(new Vector3(100,0,0));
         }
 
         else if (movement.x < -.5)
         {
             position.Set(position.x - Speed * Time.deltaTime, position.y, position.z);
+            this.transform.LookAt(new Vector3(-100, 0, 0));
         }
 
         else if (movement.y > 0.5)
         {
             position.Set(position.x, position.y, position.z + Speed * Time.deltaTime);
+            this.transform.LookAt(new Vector3(0, 0, 100));
         }
 
         else if (movement.y < -.5)
         {
             position.Set(position.x, position.y, position.z - Speed * Time.deltaTime);
+            this.transform.LookAt(new Vector3(0, 0, -100));
         }
     }
 
