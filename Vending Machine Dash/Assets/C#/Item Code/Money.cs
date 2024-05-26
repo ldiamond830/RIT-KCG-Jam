@@ -53,6 +53,8 @@ public class Money : Item
                 playerUI.Coins += moneyAmounts;
             }
 
+            this.transform.GetComponent<AudioSource>().Play();
+
             //Delete this Money
             Destroy(gameObject);
         }
