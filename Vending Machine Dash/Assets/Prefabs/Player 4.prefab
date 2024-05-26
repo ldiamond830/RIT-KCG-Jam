@@ -312,8 +312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   Speed: 5
-  projectile: {fileID: 6879255552944327415, guid: e050cfad57c76774994deefea46d321d,
-    type: 3}
   coin: {fileID: 3125868348779836731, guid: b2b28e12d1712eb44bcb8dfe36200f8f, type: 3}
   CanBuyDrink: 0
   vendingMachine: {fileID: 0}
@@ -327,6 +325,9 @@ MonoBehaviour:
     type: 3}
   JPY20Drink: {fileID: 3430882643514554007, guid: b629dcd87ac01624ca2e5689a50db17e,
     type: 3}
+  clips:
+  - {fileID: 8300000, guid: 5791d74293d40db49bfa907577035774, type: 3}
+  - {fileID: 8300000, guid: 5e24fea1a48212c41a5f90d60e3d1b94, type: 3}
   barrierTime: 0
 --- !u!65 &3994567041626250100
 BoxCollider:

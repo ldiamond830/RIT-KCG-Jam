@@ -60,10 +60,10 @@ public class CanCreator
         cans.Add(CanKinds.JPY15, JsonUtility.FromJson<CansParameter>(json15jpy.text));
         cans.Add(CanKinds.JPY20, JsonUtility.FromJson<CansParameter>(json20jpy.text));
         */
-        cans.Add(CanKinds.JPY5, new CanConfig {Price= 5, RecoveryAmount = 20.0f});
-        cans.Add(CanKinds.JPY10, new CanConfig { Price = 10, RecoveryAmount = 30.0f });
-        cans.Add(CanKinds.JPY15, new CanConfig { Price = 15, RecoveryAmount = 50.0f });
-        cans.Add(CanKinds.JPY20, new CanConfig { Price = 20, RecoveryAmount = 70.0f });
+        cans.Add(CanKinds.JPY5, new CanConfig {Price= 3, RecoveryAmount = 20.0f});
+        cans.Add(CanKinds.JPY10, new CanConfig { Price = 6, RecoveryAmount = 30.0f });
+        cans.Add(CanKinds.JPY15, new CanConfig { Price = 9, RecoveryAmount = 50.0f });
+        cans.Add(CanKinds.JPY20, new CanConfig { Price = 12, RecoveryAmount = 70.0f });
     }
 
     // Start is called before the first frame update
