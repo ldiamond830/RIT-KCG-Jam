@@ -36,6 +36,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var move = other.GetComponent<PlayerMovement>();
+
          if(move != owner){
             Debug.Log("Hit: " + other.name);
             Hit(other, move);
