@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public bool Barrier
     {
         get { return barrier; }
+    }
 
     private float barrierTimer;
     [SerializeField]
