@@ -44,6 +44,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool barrier;
 
+    private AudioSource audioSource;
+    [SerializeField] AudioClip[] clips;
+
     public bool Barrier
     {
         get { return barrier; }
@@ -65,7 +68,9 @@ public class PlayerMovement : MonoBehaviour
             ProjectileData.Owner = this;
             projectile = null;
         }
-        
+
+        audioSource.clip = clips[0];
+        audioSource.Play();
     }
 
 
@@ -74,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         UI = GetComponent<PlayerUI>();
+        audioSource = GetComponent<AudioSource>();
+
         position = this.transform.position;
         barrier = false;
     }
@@ -146,6 +153,9 @@ public class PlayerMovement : MonoBehaviour
         stunTimer = time;
         iFrameTimer = 0.4f;
         }
+
+        audioSource.clip = clips[1];
+        audioSource.Play();
     }
 
     public void PurchasePaperPackageDrink(InputAction.CallbackContext context)
