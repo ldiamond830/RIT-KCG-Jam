@@ -81,6 +81,11 @@ public class PlayerUI : MonoBehaviour
         }
 
         CoinText.text = coins + " ¥";
+
+        if (isDead)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
      public void DropMoney(int amt){

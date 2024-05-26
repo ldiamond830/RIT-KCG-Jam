@@ -229,7 +229,7 @@
                 {
                     "name": "",
                     "id": "8d36e0bb-4ff8-46d0-988b-d2dd57cd5c36",
-                    "path": "<XInputController>/dpad/up",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -262,7 +262,7 @@
                 {
                     "name": "",
                     "id": "02869b18-7110-4b74-b7f6-393cd37742e8",
-                    "path": "<XInputController>/dpad/down",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
