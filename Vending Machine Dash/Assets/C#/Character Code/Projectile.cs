@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour
     {
         var move = other.GetComponent<PlayerMovement>();
          if(move != owner){
+            Debug.Log("Hit: " + other.name);
             Hit(other, move);
             Destroy(gameObject);
          }
@@ -45,8 +46,7 @@ public class Projectile : MonoBehaviour
 
     protected virtual void Hit(Collider other, PlayerMovement move){
         if(other.tag == "Player" && !move.Barrier){
-            
-           
+
             //stun player and have them drop money 
            var UI = other.GetComponent<PlayerUI>();
            
