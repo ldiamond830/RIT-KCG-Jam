@@ -58,7 +58,7 @@ public class PlayerManager : MonoBehaviour
             {
                 if (!playerList[i].GetComponent<PlayerUI>().IsDead)
                 {
-                    PlayerPrefs.SetString("winner", "PLAYER " + (i + 1));
+                    PlayerPrefs.SetInt("Winner", i);
                     SceneManager.LoadScene("WinScene");
                 }
             }
