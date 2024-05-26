@@ -43,7 +43,7 @@ public class Projectile : MonoBehaviour
             Hit(other, move);
 
         }
-        if (other.tag != "Coin")
+        if (other.tag != "Coin" && other.tag != "Ground")
         {
             Destroy(gameObject);
         }
