@@ -15,18 +15,23 @@ public class SceneLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Start Menu" && Input.anyKeyDown)
+        if (SceneManager.GetActiveScene().name == "Start Menu" && (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Start")))
         {
             ChangeScene();
         }
            
     }
 
+    public void OnStart()
+    {
+        ChangeScene();
+    }
+
     public void ChangeScene()
     {
         if(SceneManager.GetActiveScene().name == "Start Menu")
         {
-            SceneManager.LoadScene("GameField1");
+            SceneManager.LoadScene("GameFieldBackUp");
         }
     }
 }
